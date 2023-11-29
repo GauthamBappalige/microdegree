@@ -4,33 +4,12 @@ pipeline {
     stages {
         stage('Install Apache') {
             steps {
-                
-
                     sh '''
-                    sudo apt install -y apache2
+                    echo "hello"
                     '''
                 
             }
         }
-
-        stage('Start Apache') {
-            steps {
-                
-                    sh '''
-                    sudo systemctl start apache2
-                    '''
-                
-            }
-        }
-
-        stage('Enable Apache on Boot') {
-            steps {
-              
-                    sh '''
-                    sudo systemctl enable apache2
-                    '''
-                
-            }
-        }
-    }
+    }     
 }
+
