@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Install Apache') {
+            steps {
+                
+
+                    sh '''
+                    sudo apt-get install -y apache2
+                    '''
+                
+            }
+        }
+
+        stage('Start Apache') {
+            steps {
+                
+                    sh '''
+                    sudo systemctl start apache2
+                    '''
+                
+            }
+        }
+
+        stage('Enable Apache on Boot') {
+            steps {
+              
+                    sh '''
+                    sudo systemctl enable apache2
+                    '''
+                
+            }
+        }
+    }
+}
