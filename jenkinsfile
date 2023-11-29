@@ -5,7 +5,7 @@ pipeline {
         stage('Install Apache') {
             steps {
                     sh '''
-                    echo "hello"
+                    apt install -y apache2
                     '''
                 
             }
