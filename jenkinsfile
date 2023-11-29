@@ -14,7 +14,7 @@ pipeline {
             steps {
                     sh '''
                     git clone -b staging https://github.com/GauthamBappalige/microdegree.git
-                    cp index.html /var/www/html/
+                    sudo cp index.html /var/www/html/
                     '''
             }
         }
