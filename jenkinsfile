@@ -5,11 +5,18 @@ pipeline {
         stage('Install Apache') {
             steps {
                     sh '''
-                    sudo apt install -y apache2
+                    sudo apt install apache2
                     '''
                 
             }
         }
+        stage('copying index.html file to apache2') {
+            steps {
+                    sh '''
+                    git clone -b staging https://github.com/GauthamBappalige/microdegree.git
+                    cp index.html /var/www/html/
+                    '''
+            }
+        }
     }     
 }
-
