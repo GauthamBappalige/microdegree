@@ -13,6 +13,7 @@ pipeline {
         stage('copying index.html file to apache2') {
             steps {
                     sh '''
+                    sudo rm -rf microdegree
                     git clone -b staging https://github.com/GauthamBappalige/microdegree.git
                     sudo cp index.html /var/www/html/
                     '''
